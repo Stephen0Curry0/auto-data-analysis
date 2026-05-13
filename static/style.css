@@ -1,0 +1,140 @@
+﻿* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f0f4fa 0%, #e8edf5 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* 头部 */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+header h1 {
+    font-size: 28px;
+    color: #2B579A;
+    margin-bottom: 8px;
+}
+.subtitle {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 上传区域 */
+.upload-section { margin-bottom: 25px; }
+
+.upload-area {
+    background: white;
+    border: 2px dashed #c0cce0;
+    border-radius: 14px;
+    padding: 50px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.upload-area:hover, .upload-area.drag-over {
+    border-color: #2B579A;
+    background: #f8faff;
+    box-shadow: 0 4px 20px rgba(43,87,154,0.1);
+}
+.upload-icon { font-size: 48px; margin-bottom: 12px; }
+.upload-text { font-size: 17px; font-weight: 600; color: #444; margin-bottom: 6px; }
+.upload-hint { font-size: 13px; color: #999; margin-bottom: 18px; }
+
+.file-info {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 22px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.file-info span { font-size: 14px; color: #444; font-weight: 500; }
+
+/* 按钮 */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-primary { background: #2B579A; color: white; }
+.btn-primary:hover { background: #1e3f73; }
+.btn-upload { background: #E74856; color: white; }
+.btn-upload:hover { background: #c9303e; }
+.btn-download { background: #107C41; color: white; font-size: 15px; padding: 12px 32px; }
+.btn-download:hover { background: #0a5e30; }
+.btn-reset {
+    background: white; color: #666; border: 1px solid #ddd; margin-left: 10px;
+    font-size: 15px; padding: 12px 24px;
+}
+.btn-reset:hover { background: #f5f5f5; }
+
+/* 进度 */
+.progress-section { margin-bottom: 25px; }
+.progress-card {
+    background: white;
+    border-radius: 14px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.spinner {
+    width: 40px; height: 40px;
+    border: 3px solid #e0e0e0;
+    border-top-color: #2B579A;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.progress-text { font-size: 15px; font-weight: 600; color: #444; }
+.progress-detail { font-size: 12px; color: #999; margin-top: 6px; }
+
+/* 结果卡片 */
+.result-section { margin-bottom: 25px; }
+.result-card {
+    background: white;
+    border-radius: 14px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.result-card.success { border-top: 4px solid #107C41; }
+.result-card.error { border-top: 4px solid #E74856; }
+.result-icon { font-size: 42px; margin-bottom: 10px; }
+.result-card h2 { font-size: 20px; margin-bottom: 8px; color: #333; }
+.result-card p { font-size: 13px; color: #777; margin-bottom: 18px; }
+
+/* 特性卡片 */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: transform 0.2s;
+}
+.feature-card:hover { transform: translateY(-2px); }
+.feature-icon { font-size: 32px; margin-bottom: 10px; }
+.feature-card h3 { font-size: 14px; color: #333; margin-bottom: 6px; }
+.feature-card p { font-size: 12px; color: #888; line-height: 1.5; }
