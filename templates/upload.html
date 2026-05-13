@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化数据分析系统</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <h1>📊 自动化数据分析系统</h1>
+            <p class="subtitle">上传 Excel 文件，自动生成图文并茂的 PDF 分析报告</p>
+        </header>
+
+        <!-- 上传区域 -->
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-area" id="dropZone">
+                <div class="upload-icon">📁</div>
+                <p class="upload-text">拖拽 Excel 文件到此处</p>
+                <p class="upload-hint">或点击下方按钮选择文件（支持 .xlsx / .xls）</p>
+                <input type="file" id="fileInput" accept=".xlsx,.xls" hidden>
+                <button class="btn btn-primary" id="selectBtn">选择文件</button>
+            </div>
+            <div class="file-info" id="fileInfo" style="display:none;">
+                <span id="fileName"></span>
+                <button class="btn btn-upload" id="uploadBtn">开始分析</button>
+            </div>
+        </div>
+
+        <!-- 进度区域 -->
+        <div class="progress-section" id="progressSection" style="display:none;">
+            <div class="progress-card">
+                <div class="spinner"></div>
+                <p class="progress-text" id="progressText">正在分析数据，请稍候...</p>
+                <p class="progress-detail" id="progressDetail"></p>
+            </div>
+        </div>
+
+        <!-- 结果区域 -->
+        <div class="result-section" id="resultSection" style="display:none;">
+            <div class="result-card success">
+                <div class="result-icon">✅</div>
+                <h2>报告生成完毕！</h2>
+                <p id="resultInfo"></p>
+                <button class="btn btn-download" id="downloadBtn">📥 下载 PDF 报告</button>
+                <button class="btn btn-reset" id="resetBtn">分析另一个文件</button>
+            </div>
+        </div>
+
+        <!-- 错误区域 -->
+        <div class="result-section" id="errorSection" style="display:none;">
+            <div class="result-card error">
+                <div class="result-icon">❌</div>
+                <h2>分析出错</h2>
+                <p id="errorText"></p>
+                <button class="btn btn-reset" id="resetErrorBtn">重新上传</button>
+            </div>
+        </div>
+
+        <!-- 特性展示 -->
+        <div class="features" id="features">
+            <div class="feature-card">
+                <div class="feature-icon">🧹</div>
+                <h3>数据清洗</h3>
+                <p>自动检测并处理缺失值、重复行、异常类型，确保数据质量</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>多维分析</h3>
+                <p>覆盖数值分布、分类统计、时间趋势、相关性、交叉分析等维度</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>可视化图表</h3>
+                <p>自动生成直方图、箱线图、热力图等多种专业图表</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>PDF 报告</h3>
+                <p>一键输出排版精美、图文并茂的 PDF 分析报告</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
